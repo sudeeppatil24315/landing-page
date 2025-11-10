@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 
 const stats = [
-  { value: 50000, suffix: "+", label: "Active Users", description: "Developers practicing daily" },
-  { value: 1000000, suffix: "+", label: "Interviews", description: "Completed successfully" },
-  { value: 95, suffix: "%", label: "Success Rate", description: "Users landing jobs" },
-  { value: 4.9, suffix: "/5", label: "Rating", description: "From 10K+ reviews", decimals: 1 }
+  { value: 3, suffix: "+", label: "Active Users", description: "Early adopters" },
+  { value: 7, suffix: "+", label: "Interviews", description: "Completed successfully" },
+  { value: 2, suffix: "+", label: "Projects", description: "In development" },
+  { value: 1, suffix: "", label: "Platform", description: "AI-powered solution" }
 ];
 
 function Counter({ value, decimals = 0 }: { value: number; decimals?: number }) {
