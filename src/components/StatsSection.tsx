@@ -7,7 +7,7 @@ const stats = [
   { value: 3, suffix: "+", label: "Active Users", description: "Early adopters" },
   { value: 7, suffix: "+", label: "Interviews", description: "Completed successfully" },
   { value: 2, suffix: "+", label: "Projects", description: "In development" },
-  { value: 1, suffix: "", label: "Platform", description: "AI-powered solution" }
+  { value: 1, suffix: "", label: "Powered by Vapi", description: "Voice AI technology" }
 ];
 
 function Counter({ value, decimals = 0 }: { value: number; decimals?: number }) {
