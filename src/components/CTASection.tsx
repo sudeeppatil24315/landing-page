@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { GradientButton } from "@/components/ui/gradient-button";
-import { ScrollReveal } from "@/components/ScrollReveal";
 import { APP_CONFIG } from "@/config/app";
 
 export function CTASection() {

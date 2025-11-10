@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const stats = [
@@ -35,7 +34,7 @@ function Counter({ value, decimals = 0 }: { value: number; decimals?: number }) 
   return <span>{decimals > 0 ? count.toFixed(decimals) : Math.floor(count).toLocaleString()}</span>;
 }
 
-import { ScrollReveal, ScrollRevealStagger, ScrollRevealItem } from "@/components/ScrollReveal";
+import { ScrollRevealStagger, ScrollRevealItem } from "@/components/ScrollReveal";
 
 export function StatsSection() {
   return (

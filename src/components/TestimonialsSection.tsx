@@ -99,13 +99,6 @@ export function TestimonialsSection() {
     });
   };
 
-  // Get visible testimonials (current + 2 on sides)
-  const getVisibleTestimonials = () => {
-    const prev = currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1;
-    const next = (currentIndex + 1) % testimonials.length;
-    return [prev, currentIndex, next];
-  };
-
   return (
     <section className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden bg-black">
       {/* Background */}
