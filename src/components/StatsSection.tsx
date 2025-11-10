@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 
 // Updated stats for new project launch
 const stats = [
-  { value: 3, suffix: "+", label: "Active Users", description: "Early adopters" },
-  { value: 7, suffix: "+", label: "Interviews", description: "Completed successfully" },
-  { value: 2, suffix: "+", label: "Projects", description: "In development" },
-  { value: 1, suffix: "", label: "Powered by Vapi", description: "Voice AI technology" }
+  { value: 3, suffix: "+", label: "Active Users", description: "Early adopters", decimals: 0 },
+  { value: 7, suffix: "+", label: "Interviews", description: "Completed successfully", decimals: 0 },
+  { value: 2, suffix: "+", label: "Projects", description: "In development", decimals: 0 },
+  { value: 1, suffix: "", label: "Powered by Vapi", description: "Voice AI technology", decimals: 0 }
 ];
 
 function Counter({ value, decimals = 0 }: { value: number; decimals?: number }) {
