@@ -103,7 +103,7 @@ export function TestimonialsSection() {
     <section className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden bg-black">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-blue-950/10 to-black" />
-      
+
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header */}
         <ScrollReveal direction="up" className="text-center mb-16">
@@ -134,7 +134,7 @@ export function TestimonialsSection() {
         </ScrollReveal>
 
         {/* Carousel Container */}
-        <div 
+        <div
           className="relative max-w-5xl mx-auto"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
@@ -156,7 +156,7 @@ export function TestimonialsSection() {
                 drag="x"
                 dragConstraints={{ left: 0, right: 0 }}
                 dragElastic={1}
-                onDragEnd={(e, { offset, velocity }) => {
+                onDragEnd={(_e, { offset, velocity }) => {
                   const swipe = swipePower(offset.x, velocity.x);
 
                   if (swipe < -swipeConfidenceThreshold) {
@@ -170,12 +170,12 @@ export function TestimonialsSection() {
                 <Card className="bg-black/60 backdrop-blur-md border-gray-800 hover:border-purple-500/50 transition-all duration-300 p-6 sm:p-8">
                   <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
                     {/* Image */}
-                    <img 
-                      src={testimonials[currentIndex].image} 
+                    <img
+                      src={testimonials[currentIndex].image}
                       alt={testimonials[currentIndex].name}
                       className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover border-4 border-purple-500/30"
                     />
-                    
+
                     {/* Content */}
                     <div className="flex-1 text-center sm:text-left">
                       {/* Stars */}
@@ -238,11 +238,10 @@ export function TestimonialsSection() {
                   setDirection(index > currentIndex ? 1 : -1);
                   setCurrentIndex(index);
                 }}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  index === currentIndex 
-                    ? 'w-8 bg-gradient-to-r from-purple-500 to-cyan-500' 
-                    : 'w-2 bg-gray-600 hover:bg-gray-500'
-                }`}
+                className={`h-2 rounded-full transition-all duration-300 ${index === currentIndex
+                  ? 'w-8 bg-gradient-to-r from-purple-500 to-cyan-500'
+                  : 'w-2 bg-gray-600 hover:bg-gray-500'
+                  }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />
             ))}
