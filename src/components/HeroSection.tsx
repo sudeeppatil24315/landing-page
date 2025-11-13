@@ -132,8 +132,8 @@ export function HeroSection() {
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-cyan-500/20 rounded-3xl blur-3xl" />
             
             {/* 3D Scene Container */}
-            <div className="relative w-full h-[85%] max-w-xl rounded-3xl overflow-hidden border border-gray-800 bg-black/40 backdrop-blur-sm">
-              <div className="w-full h-full scale-75 sm:scale-90">
+            <div className="relative w-full h-[85%] max-w-xl rounded-3xl overflow-hidden border border-gray-800 bg-black/40 backdrop-blur-sm transform-gpu">
+              <div className="w-full h-full scale-75 sm:scale-90 transform-gpu">
                 <SplineScene 
                   scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
                   className="w-full h-full"

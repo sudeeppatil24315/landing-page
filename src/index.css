@@ -2,6 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Performance optimizations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* GPU acceleration for animations */
+.animate-blob,
+.animate-pulse,
+.animate-spin,
+[class*="animate-"] {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Optimize images and media */
+img, video, canvas {
+  will-change: auto;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

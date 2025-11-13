@@ -24,7 +24,9 @@ export function ParticleField() {
       vz: number;
     }> = [];
 
-    const particleCount = 100;
+    // Reduce particles on mobile for better performance
+    const isMobile = window.innerWidth < 768;
+    const particleCount = isMobile ? 30 : 60; // Reduced from 100
     const maxDepth = 1000;
 
     for (let i = 0; i < particleCount; i++) {
@@ -68,26 +70,28 @@ export function ParticleField() {
         ctx.arc(x2d, y2d, size, 0, Math.PI * 2);
         ctx.fill();
 
-        // Draw connection lines
-        particles.forEach((other) => {
-          const dx = particle.x - other.x;
-          const dy = particle.y - other.y;
-          const dz = particle.z - other.z;
-          const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
+        // Skip connection lines on mobile for better performance
+        if (!isMobile) {
+          particles.forEach((other) => {
+            const dx = particle.x - other.x;
+            const dy = particle.y - other.y;
+            const dz = particle.z - other.z;
+            const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
 
-          if (distance < 200) {
-            const otherScale = 500 / (500 + other.z);
-            const otherX2d = other.x * otherScale + canvas.width / 2;
-            const otherY2d = other.y * otherScale + canvas.height / 2;
+            if (distance < 200) {
+              const otherScale = 500 / (500 + other.z);
+              const otherX2d = other.x * otherScale + canvas.width / 2;
+              const otherY2d = other.y * otherScale + canvas.height / 2;
 
-            ctx.strokeStyle = `hsla(${hue}, 70%, 60%, ${(1 - distance / 200) * 0.2})`;
-            ctx.lineWidth = 0.5;
-            ctx.beginPath();
-            ctx.moveTo(x2d, y2d);
-            ctx.lineTo(otherX2d, otherY2d);
-            ctx.stroke();
-          }
-        });
+              ctx.strokeStyle = `hsla(${hue}, 70%, 60%, ${(1 - distance / 200) * 0.2})`;
+              ctx.lineWidth = 0.5;
+              ctx.beginPath();
+              ctx.moveTo(x2d, y2d);
+              ctx.lineTo(otherX2d, otherY2d);
+              ctx.stroke();
+            }
+          });
+        }
       });
 
       animationId = requestAnimationFrame(animate);
