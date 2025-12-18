@@ -28,7 +28,9 @@ body {
 }
 
 /* Optimize images and media */
-img, video, canvas {
+img,
+video,
+canvas {
   will-change: auto;
 }
 

@@ -143,8 +143,8 @@ export default function Navbar() {
 
             {/* Main nav */}
             <div className="flex items-center gap-6">
-              <a href="#" className="text-2xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                AI Interview
+              <a href="#" className="flex items-center">
+                <img src="/navbarlogo.png" alt="AI ASTRA logo" className="h-10 w-auto" />
               </a>
 
               {/* Navigation menu */}
